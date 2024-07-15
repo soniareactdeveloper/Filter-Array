@@ -1,0 +1,172 @@
+const products = [
+  {
+    "id": 1,
+    "img": "https://i.pinimg.com/564x/65/39/00/653900658db7f7fc16469aca0b7bd350.jpg",
+    "category": "Sofa",
+    "name": "Comfortable Sofa",
+    "price": 499.99,
+    "discount_price": 399.99,
+    "material": "Leather",
+    "dimensions": "200x90x85 cm",
+    "color": "Black",
+    "in_stock": true
+  },
+  {
+    "id": 2,
+    "img": "https://i.pinimg.com/564x/d0/ae/bb/d0aebb4a8423a94d03c29eff5f484f9a.jpg",
+    "category": "Table",
+    "name": "Dining Table",
+    "price": 299.99,
+    "discount_price": 249.99,
+    "material": "Wood",
+    "dimensions": "150x90x75 cm",
+    "color": "Brown",
+    "in_stock": true
+  },
+  {
+    "id": 3,
+    "img": "https://i.pinimg.com/564x/db/6e/79/db6e79722c171f53349d715524909d9f.jpg",
+    "category": "Chair",
+    "name": "Office Chair",
+    "price": 199.99,
+    "discount_price": null,
+    "material": "Mesh",
+    "dimensions": "60x60x100 cm",
+    "color": "Grey",
+    "in_stock": true
+  },
+  {
+    "id": 4,
+    "img": "https://i.pinimg.com/564x/10/4a/1f/104a1fdfa254b7a633c6b730acfcac47.jpg",
+    "category": "Table",
+    "name": "Coffee Table",
+    "price": 99.99,
+    "discount_price": 79.99,
+    "material": "Glass",
+    "dimensions": "90x50x45 cm",
+    "color": "White",
+    "in_stock": false
+  },
+  {
+    "id": 5,
+    "img": "https://i.pinimg.com/736x/99/87/6e/99876e3214d608011c440ea138f7dce0.jpg",
+    "category": "Table",
+    "name": "Side Table",
+    "price": 59.99,
+    "discount_price": 49.99,
+    "material": "Metal",
+    "dimensions": "45x45x50 cm",
+    "color": "Silver",
+    "in_stock": true
+  },
+  {
+    "id": 6,
+    "img": "https://i.pinimg.com/564x/eb/1f/e6/eb1fe6654fb2f13fc2c2bd6d7be47eae.jpg",
+    "category": "Bed",
+    "name": "Queen Bed",
+    "price": 799.99,
+    "discount_price": 699.99,
+    "material": "Wood",
+    "dimensions": "210x160x100 cm",
+    "color": "Dark Brown",
+    "in_stock": true
+  },
+  {
+    "id": 7,
+    "img": "https://i.pinimg.com/564x/fe/d3/33/fed3337f90f40206ded3ca03067741b1.jpg",
+    "category": "Sofa",
+    "name": "Sectional Sofa",
+    "price": 899.99,
+    "discount_price": 799.99,
+    "material": "Fabric",
+    "dimensions": "300x200x90 cm",
+    "color": "Blue",
+    "in_stock": true
+  },
+  {
+    "id": 8,
+    "img": "https://i.pinimg.com/564x/0e/6f/b9/0e6fb9e961592c98fa1663cc5518511a.jpg",
+    "category": "Chair",
+    "name": "Dining Chair",
+    "price": 99.99,
+    "discount_price": null,
+    "material": "Wood",
+    "dimensions": "50x50x100 cm",
+    "color": "Beige",
+    "in_stock": true
+  },
+  {
+    "id": 9,
+    "img": "https://i.pinimg.com/564x/e2/a6/d1/e2a6d1d73e5e5746db6d3a397aad3f2f.jpg",
+    "category": "Sofa",
+    "name": "Recliner Sofa",
+    "price": 599.99,
+    "discount_price": 499.99,
+    "material": "Leather",
+    "dimensions": "220x90x100 cm",
+    "color": "Brown",
+    "in_stock": false
+  },
+  {
+    "id": 10,
+    "img": "https://i.pinimg.com/736x/3e/64/31/3e64311827271c5567bd04a7e5fd62a4.jpg",
+    "category": "Bed",
+    "name": "Single Bed",
+    "price": 399.99,
+    "discount_price": null,
+    "material": "Metal",
+    "dimensions": "200x90x100 cm",
+    "color": "White",
+    "in_stock": true
+  },
+  {
+    "id": 11,
+    "img": "https://i.pinimg.com/564x/b2/35/e2/b235e2114779d4e760e0a2928d550a30.jpg",
+    "category": "Table",
+    "name": "Study Table",
+    "price": 199.99,
+    "discount_price": 179.99,
+    "material": "Wood",
+    "dimensions": "120x60x75 cm",
+    "color": "Black",
+    "in_stock": true
+  },
+  {
+    "id": 12,
+    "img": "https://i.pinimg.com/564x/40/09/5d/40095d5904663d5d2454415e6e7c3710.jpg",
+    "category": "Chair",
+    "name": "Lounge Chair",
+    "price": 249.99,
+    "discount_price": null,
+    "material": "Fabric",
+    "dimensions": "80x80x90 cm",
+    "color": "Green",
+    "in_stock": true
+  },
+  {
+    "id": 13,
+    "img": "https://i.pinimg.com/564x/5d/3b/d0/5d3bd0ed33fe017e5c023e032d500e9a.jpg",
+    "category": "Table",
+    "name": "Console Table",
+    "price": 149.99,
+    "discount_price": 129.99,
+    "material": "Wood",
+    "dimensions": "120x40x80 cm",
+    "color": "Grey",
+    "in_stock": false
+  },
+  {
+    "id": 14,
+    "img": "https://i.pinimg.com/564x/94/ba/73/94ba73adb532aef36af0105f3dd452f4.jpg",
+    "category": "Chair",
+    "name": "Rocking Chair",
+    "price": 199.99,
+    "discount_price": null,
+    "material": "Wood",
+    "dimensions": "60x100x120 cm",
+    "color": "Brown",
+    "in_stock": true
+  }
+]
+
+export default products 
