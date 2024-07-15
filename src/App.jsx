@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import products from './ProductsData'
 
@@ -9,32 +9,42 @@ import products from './ProductsData'
 function App() {
   const [data,setData] = useState(products)
 
- const handleButton = (furniture) =>{
-  //  filter function 
-  const filterData = products.filter ((furnitureProducts)=>{
-    return furnitureProducts.category === furniture
-  })
-  setData(filterData)
-}
-
+  const handleButton = (furniture)=>{
+    //filter Functions
+    const filterData = products.filter((productsData)=>{
+      return productsData.category == furniture
+    })
+    setData(filterData)
+  }
+ 
+  // animation 
+  useEffect(()=>{
+     const single_card = document.querySelectorAll('.single_card')
+     
+      single_card.forEach((items)=>{
+        items.classList.remove('animations')
+        void items.offsetWidth;
+        items.classList.add('animations')  // add animation class
+      })
+  },[data])
 
 
   return (
     <>
      <nav className="bg-gray-800 p-5">
         <div className="flex justify-center gap-3">
-          <button onClick={()=> setData(products)} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">All</button>
-          <button onClick={()=>handleButton("Sofa")} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">Sofa</button>
-          <button onClick={()=>handleButton("Bed")} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">Bed</button>
-          <button onClick={()=>handleButton("Table")} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">Table</button>
-          <button onClick={()=>handleButton("Chair")} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">Chair</button>
+          <button onClick={()=>setData(products)} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">All</button>
+          <button onClick={()=> handleButton ("Sofa")} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">Sofa</button>
+          <button onClick={()=> handleButton ("Bed")} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">Bed</button>
+          <button onClick={()=> handleButton ("Table")} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">Table</button>
+          <button onClick={()=> handleButton ("Chair")} className="text-white px-3 py-3 rounded-lg hover:bg-gray-700">Chair</button>
         </div>
      </nav>
     
      <div className="main flex flex-wrap gap-4 justify-center mb-6">
         {
             data.map((items,i )=>(
-              <div key={i} className="bg-white shadow-lg rounded-lg p-4" style={{ width: '400px' }}>
+              <div key={i} className="single_card bg-white shadow-lg rounded-lg p-4" style={{ width: '400px' }}>
               <img src={items.img} alt={name} className="w-full h-48 rounded-md object-cover" />
               <div className="mt-4">
                 <h2 className="text-2xl font-semibold text-gray-800">{items.name}</h2>
